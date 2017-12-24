@@ -29,13 +29,13 @@ public class Raty {
 		double kwota = 0;
 		if(raty >= 6 && raty <= 12) {
 			odsetki = 0.025;
-			kwota = (price * odsetki) / raty;
+			kwota = (price + (price * odsetki)) / raty;
 		} else if(raty >=13 && raty <= 24) {
 			odsetki = 0.05;
-			kwota = (price * odsetki) / raty;
+			kwota = (price + (price * odsetki)) / raty;
 		}else if(raty >=25 && raty <= 48) {
 			odsetki = 0.10;
-			kwota = (price * odsetki) / raty;
+			kwota = (price + (price * odsetki)) / raty;
 		}
 		
 		return kwota;
