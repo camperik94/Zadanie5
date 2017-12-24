@@ -2,7 +2,7 @@
 public class Raty {
 	private int price;
 	private int raty;
-
+	
 	public void setPrice(int price) {
 		this.price = price;
 	}
@@ -24,7 +24,20 @@ public class Raty {
 		this.raty = raty;
 	}
 	
-	public void obliczRaty() {
+	public double obliczRaty() {
+		double odsetki;
+		double kwota = 0;
+		if(raty >= 6 && raty <= 12) {
+			odsetki = 0.025;
+			kwota = (price * odsetki) / raty;
+		} else if(raty >=13 && raty <= 24) {
+			odsetki = 0.05;
+			kwota = (price * odsetki) / raty;
+		}else if(raty >=25 && raty <= 48) {
+			odsetki = 0.10;
+			kwota = (price * odsetki) / raty;
+		}
 		
+		return kwota;
 	}
 }
